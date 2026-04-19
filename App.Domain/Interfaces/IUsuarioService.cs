@@ -1,6 +1,11 @@
-﻿namespace App.Domain.Interfaces;
+﻿using App.Domain.Entities;
 
-public class IUsuarioService
+namespace App.Domain.Interfaces;
+
+public interface IUsuarioService
 {
-    
+    IEnumerable<Usuario> Listar();
+    void Incluir(Usuario usuario);
+    void Excluir(int id);
+    void Editar(Usuario usuario);
 }
