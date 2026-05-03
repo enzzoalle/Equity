@@ -1,18 +1,13 @@
 ﻿using App.Application.Services;
-using App.Domain.Interfaces;
-using App.Persistence;
+using App.Domain.Interfaces.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace App.Application;
 
 public static class DependencyInjectionConfig
 {
-    public static IServiceCollection AddApplicationDependencies(this IServiceCollection services)
+    public static void Inject(IServiceCollection services)
     {
-        services.AddScoped<IUsuarioService, UsuarioService>();
-
-        services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
-
-        return services;
+        services.AddTransient<IUsuarioService, UsuarioService>();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using App.Domain.Entities;
 using App.Domain.Interfaces;
+using App.Domain.Interfaces.Services;
 
 namespace App.Application.Services;
 
@@ -22,13 +23,13 @@ public class UsuarioService : IUsuarioService
     {
         _usuarioRepository.Insert(usuario);
     }
-    
+
     public void Excluir(int id)
     {
         var objeto = _usuarioRepository.FindById(id);
         _usuarioRepository.Remove(objeto);
     }
-    
+
     public void Editar(Usuario usuario)
     {
         _usuarioRepository.Update(usuario);

@@ -1,6 +1,6 @@
 ﻿using App.Domain.Entities;
 
-namespace App.Domain.Interfaces;
+namespace App.Domain.Interfaces.Services;
 
 public interface IUsuarioService
 {
